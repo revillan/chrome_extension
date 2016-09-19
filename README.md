@@ -3,6 +3,10 @@
 ### Background
 
 
+### Wireframes
+
+![wireframe](./chrome.png)
+
 ### Functionality and MVP
 
 - [ ] Fetches data from external API
