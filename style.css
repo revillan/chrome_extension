@@ -4,15 +4,10 @@
   padding: 0;
   text-decoration: none;
   font: inherit;
-  font-size: 16px;
+  font-size: 15px;
   box-sizing: border-box;
   color: inherit;
 }
-
-/*.inner-box > a >  img {
-  height: 40px;
-  width: 40px;
-}*/
 
 body {
   background-color: #fff;
@@ -20,6 +15,7 @@ body {
 
 .embed {
   position: relative;
+  background-color: "blue";
   height: 100%;
   width: 100%;
 }
@@ -28,7 +24,7 @@ html, iframe {
   width: 100%;
   height: 100%;
   font: sans-serif;
-  color: black;
+  color: white;
 }
 
 iframe {
@@ -41,6 +37,8 @@ html, body {
   position: fixed;
   z-index: -5;
   background-color: "black";
+  /*font-family: 'Montserrat', sans-serif;*/
+
 }
 
 .outer {
@@ -61,6 +59,7 @@ html, body {
   width: 50%;
   overflow: auto;
   border-radius: 4px;
+  font-size: 16px;
   margin-left: 10%;
 }
 
@@ -72,6 +71,8 @@ html, body {
   height: 15%;
   border-top: 0px solid;
   border-bottom: 0px solid;
+  justify-content: center;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 
@@ -82,12 +83,16 @@ html, body {
   width: 20%;
 }
 
-.headline{
-  display: block;
-  float: left;
-  margin-left: 5%;
-  width: 65%;
+.headline {
+    display: flex;
+    height: 90%;
+    margin: auto 0;
+    margin-left: 27%;
+    width: 65%;
+    font-size: 15px;
+    align-items: center;
 }
+
 .inner-box:hover {
   background-color: #ccc;
 }
@@ -96,6 +101,7 @@ div#weather {
     background-color: rgba(100,100,100,0.6);
     z-index: 5;
     opacity: 50%;
+    font-family: 'Montserrat', sans-serif;
     margin-right: 10%;
     display: flex;
     flex-direction: column;
