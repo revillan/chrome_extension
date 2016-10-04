@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  chrome.tabs.getCurrent((tab) => (chrome.pageAction.show(tab["id"])) );
 
   let news = new XMLHttpRequest();
 
@@ -11,12 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   background.onreadystatechange = () => {
     if (background.readyState ===  XMLHttpRequest.DONE && background.status === 200) {
-        console.log(background.responseText);
         let img = document.createElement("img");
         img.setAttribute("src", JSON.parse(background.responseText).url);
         img.className = "embed";
         back.appendChild(img);
-        console.log(JSON.parse(background.responseText).url);
     }
   };
 
@@ -58,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var geoSuccess = function(position) {
     startPos = position;
     let coords = [startPos.coords.latitude, startPos.coords.longitude];
-    // document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-    // document.getElementById('startLon').innerHTML = startPos.coords.longitude;
     let weather = new XMLHttpRequest();
     let api = "38f0f175e67d3cf9f0fff17b3c74f368";
 
@@ -67,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     weather.onreadystatechange = () => {
       if (weather.readyState === XMLHttpRequest.DONE && weather.status === 200) {
-        console.log(JSON.parse(weather.responseText));
         let data = JSON.parse(weather.responseText);
         let current = document.getElementById("weather");
         let name = document.createElement("div");
@@ -76,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
         curTemp.appendChild(document.createTextNode(data.main.temp + " °F"));
         let icon = document.createElement("img");
         icon.setAttribute("src", `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
-        console.log(name);
         name.className = "city";
         curTemp.className = "temp";
         current.appendChild(name);
@@ -89,7 +84,3 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   navigator.geolocation.getCurrentPosition(geoSuccess);
 });
-
-// <iframe id="player" frameborder="0" height="100%" width="100%"
-//     src="https://youtube.com/embed/ceP_zvyM3A4?autoplay=1&enablejsapi=1&controls=0&showinfo=0&autohide=1">
-// </iframe>

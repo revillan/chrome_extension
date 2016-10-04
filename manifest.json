@@ -1,15 +1,15 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "Simple New Tab",
+  "description": "This extension shows the current weather and news headlines in the new tab page.",
   "version": "1.0",
 
   "permissions": [
-    "https://ajax.googleapis.com/",
-    "geolocation"
+    "geolocation",
+    "tabs"
   ],
-  "browser_action": {
+  "page_action": {
     "default_icon": "icon.png"
   },
   "web_accessible_resources": [

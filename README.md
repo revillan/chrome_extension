@@ -1,43 +1,17 @@
-## New Tab Chrome Extension
+## Simple New Tab Chrome Extension
 
 ### Background
 
+I wanted to create a simple, clean New Tab page for Chrome that displays the
+current weather in the user's area, as well as a list of current news headlines. The New Page Extension can be downloaded [here](https://chrome.google.com/webstore/detail/simple-new-tab/gjelabfnalcklnibgagdlpmdhmkcpkbm).
 
-### Wireframes
+### Features
 
-![wireframe](./chrome.png)
+The new page appears on a background image which is drawn from the SplashBase
+API. The call to the API is asynchronous, and asks for a random image, so that a different background image appears each time.
 
-### Functionality and MVP
+![screenshot](./screenshot.png)
 
-- [ ] Fetches data from external API
-- [ ] Renders content onto the New Tab page
+The page features weather information as well. Location information is received from Chrome's geolocation API as latitude and longitude coordinates. These coordinates are then passed to the OpenWeatherMap's current weather API to get current weather data for the user's area.
 
-### Technologies
-
-This Chrome Extension will use the basic technology: JavaScript, HTML, and CSS. In addition to `manifest.json` and `package.json` files, there will be two scripts:
-
-- `api.js` that makes AJAX requests to the external API
-- `page.js` that renders content onto the new tab page
-
-There will also be one HTML and one CSS file to handle the styling.
-
-### Implementation Timeline
-
-**Day 1**
-
-- [ ] Set up Chrome extension infrastructure
-- [ ] Familiarize myself with setup of Chrome extensions
-
-**Day 2**
-
-- [ ] Be able to render content onto the New Tab page
-- [ ] Familiarize myself with external API
-- [ ] Make AJAX requests to the external API
-
-**Day 3**
-
-- [ ] Render content from the external API on the New Tab page
-
-**Day 4**
-
-- [ ] Style the content on the New Tab page
+Finally, the extension uses NewsAPI to get the latest headlines and their associated thumbnails from Associated Press. These headlines are displayed on a page, and each headline is a link to the full story on the Associated Press website.
